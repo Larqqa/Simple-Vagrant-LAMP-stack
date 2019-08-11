@@ -1,4 +1,10 @@
-# Vagrant box for a simple LAMP stack
+# Some Vagrant boxes
+A collection of simple Vagrant boxes to run my favourite stacks.
 
-This is a Vagrant box for a LAMP stack running PHP 7.2.
-This box also includes NodeJS and PHPMyAdmin
+## Vagrant_LAMP
+A basic LAMP stack.
+The stack uses PHP 7.2 and has MySQL & PHPMyAdmin
+
+## Vagrant_MERN
+A basic MERN stack.
+The stack uses NodeJS v10 and MongoDB v.4 
