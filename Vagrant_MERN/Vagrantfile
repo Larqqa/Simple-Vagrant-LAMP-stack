@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 3000
 
   # Synced folder
-  config.vm.synced_folder "./data", "/var/www/html" , :mount_options => ["dmode=777", "fmode=666"], create:true
+  config.vm.synced_folder "./data", "/var/www/html" , type: "nfs", create: true
 
   # Provisions
   config.vm.provision "shell", path: "install.sh"

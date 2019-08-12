@@ -5,10 +5,9 @@ apt-get upgrade
 # Install essentials
 apt-get install -y git build-essential
 
-# Install NodeJS v.10
-curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
-bash nodesource_setup.sh
-apt-get install -y nodejs
+# Install NodeJS and NPM
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt install -y nodejs
 
 
 # Get MongoDB v.4 package
