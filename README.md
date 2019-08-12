@@ -7,4 +7,8 @@ The stack uses PHP 7.2 and has MySQL & PHPMyAdmin
 
 ## Vagrant_MERN
 A basic MERN stack.
-The stack uses NodeJS v10 and MongoDB v.4 
+The stack uses NodeJS v10 and MongoDB v.4
+
+## Vagrant_WordPress
+A basic WordPress installation
+The stack uses PHP 7.2 and has MySQL & PHPMyAdmin. WP_CLI is used to install WordPress on the machine. 

@@ -46,3 +46,8 @@ sudo service apache2 restart
 curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
 bash nodesource_setup.sh
 apt-get install -y nodejs
+
+# Install WP-CLI
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp
