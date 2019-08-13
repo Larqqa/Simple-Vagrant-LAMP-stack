@@ -2,9 +2,8 @@
 DBPASSWD=admin_123
 
 # Remove default files from html
-rm -r /var/www/html/*
-
 cd /var/www/html
+rm index.html
 
 # Get WP files
 wp core download

@@ -14,9 +14,13 @@ Vagrant.configure("2") do |config|
   # Network settings
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
+  # Open these ports as needed for use with forexample BrowserSync
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  # config.vm.network "forwarded_port", guest: 3001, host: 3001
+  # config.vm.network "forwarded_port", guest: 3002, host: 3002
+
   # Synced folder
-  config.vm.synced_folder "./data", "/var/www/html" , :mount_options => ["dmode=777", "fmode=666"], create:true
-  config.vm.synced_folder "./content", "/var/www/html/wp-content" , :mount_options => ["dmode=777", "fmode=666"], create:true
+  config.vm.synced_folder "./data", "/var/www/html" , type: "nfs", create: true
 
   # Provisions #
 

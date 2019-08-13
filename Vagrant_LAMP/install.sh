@@ -43,5 +43,5 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.0/apache2/php.ini
 sudo service apache2 restart
 
 # Install NodeJS and NPM
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 apt install -y nodejs

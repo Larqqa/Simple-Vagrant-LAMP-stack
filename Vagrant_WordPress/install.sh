@@ -20,7 +20,7 @@ debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multisel
 apt-get install -y mysql-server phpmyadmin
 
 # Install Apache2 & Git
-apt-get install -y apache2 git build-essential
+apt-get install -y apache2 git curl build-essential python-software-properties
 
 # Enable Apache Mods
 a2enmod rewrite
@@ -42,12 +42,17 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.0/apache2/php.ini
 # Restart Apache
 sudo service apache2 restart
 
-# Install NodeJS v.10
-curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
-bash nodesource_setup.sh
-apt-get install -y nodejs
-
 # Install WP-CLI
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
+
+# Install NodeJS and NPM
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt install -y nodejs
+
+# Install yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install yarn
